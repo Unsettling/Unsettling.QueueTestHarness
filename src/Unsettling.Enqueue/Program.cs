@@ -9,6 +9,7 @@
     {
         public static void Main(string[] args)
         {
+            // docker.local is set in the HOSTS file to the Docker machine's IP.
             var endpoint = "docker.local";
             var host = $"host={endpoint}";
             var appId = Guid.NewGuid().ToString();

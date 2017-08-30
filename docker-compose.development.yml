@@ -1,23 +1,15 @@
 version: '3.1'
 services:
   subscriber:
-    image: unsettling/dequeue:debug
+    image: unsettling/dequeue:development
     build:
       context: ./src/Unsettling.Dequeue
       dockerfile: Dockerfile.development
     environment:
       - NETCOREAPP_ENVIRONMENT=Development
       - REMOTE_DEBUGGING
-    depends_on:
-      - rabbitmq
-    networks: 
-      - queue
   rabbitmq:
     image: rabbitmq:3-management
     ports:
       - 15672
       - 5672
-    networks: 
-      - queue
-networks:
-  queue:
