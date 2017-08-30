@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  subscriber:
+    image: unsettling/dequeue
+    build:
+      context: ./src/Unsettling.Dequeue
+      dockerfile: Dockerfile
+    environment:
+      - NETCOREAPP_ENVIRONMENT=Production
+    depends_on:
+      - rabbitmq
+    networks: 
+      - queue
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 15672
+      - 5672
+    networks: 
+      - queue
+networks:
+  queue:
+

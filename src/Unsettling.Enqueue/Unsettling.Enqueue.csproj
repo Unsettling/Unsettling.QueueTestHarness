@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="EasyNetQ" Version="2.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Unsettling.Models\Unsettling.Models.csproj" />
+    <ProjectReference Include="..\Unsettling.Messages\Unsettling.Messages.csproj" />
+  </ItemGroup>
+</Project>
